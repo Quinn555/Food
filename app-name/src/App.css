@@ -2,9 +2,17 @@ html, body, #root, .App{
   width: 100%;
   height: 100%;
 }
-h1, p{
-  margin: 0;
+html{
+  overflow: hidden;
 }
+button {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+
+}
+
 .App{
   display: flex;
   justify-content: center;
@@ -18,9 +26,11 @@ h1, p{
 }
 
 .stuff-in-menu{
-  width: 50%;
+  width: 40%;
   justify-content: center;
   align-items: center;
+  border: 20px solid #333030;
+  z-index: 1;
 }
 
 .main-menu{
@@ -37,23 +47,44 @@ h1, p{
 
 .buttonStuff{
   width: 100%;
+  font-size: 70px;
+  background-color: #333030;
 }
 
 .title{
   width: 100%;
   height: 15%;
   font-size: 100px;
-  font-family: 'Mea Culpa', cursive;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: none;
+  background: linear-gradient(to right, #111111, goldenrod);
 }
 
-.imag-fancy{
-  width: 10%;
-  height: 100%;
-  background-image: url('./images/fancyImg.png');
+.smallImg{
+  width: 100%;
+  height: 400px;
+  align-items: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  border: 2px solid goldenrod;
+}
+
+
+.fancy{
+  color: rgb(255, 222, 139);
+  font-family: 'Mea Culpa', cursive;
+}
+
+video{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: -1;
+  object-fit: cover;
+
+
+
 }

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.css';
+import video from './images/fancyOrcastraPeople.mp4'
 
 function App() {
   const [mainMenu, setmainMenu] = useState([]);
@@ -44,11 +45,12 @@ function App() {
     console.log(dataCat);
     let imagesArray = dataCat.map((imgLink) => (
       <div key={imgLink.idCategory ?? imgLink.idMeal}>
-        <button className='buttonStuff' onClick={() => getLinkOnButton(imgLink)}>
+        <button className='buttonStuff fancy' onClick={() => getLinkOnButton(imgLink)}>
           {imgLink.strCategory ?? imgLink.strMeal}
         </button>
         <div className='options'>
-          <img src={imgLink.strCategoryThumb ?? imgLink.strMealThumb} alt={imgLink.strCategory ?? imgLink.strMeal}/>
+          <div className='smallImg' style={{ backgroundImage: `url(${imgLink.strCategoryThumb ?? imgLink.strMealThumb})` }}>
+          </div>
         </div>
         
       </div>
@@ -56,13 +58,14 @@ function App() {
     setImagesHtml(imagesArray);
   }, [dataCat]);
 
-
   return (
     <div className="App">
       <div className='main'>
-        <div className='imag-fancy'></div>
+        <video autoPlay loop muted>
+          <source src={video} type="video/mp4"/>
+       </video>
         <div className='stuff-in-menu'>
-          <button className='title' onClick={() => setDataCat(mainMenu)}>Menu</button>
+          <button className='title fancy' onClick={() => setDataCat(mainMenu)}>Menu</button>
           <div className='main-menu'>{imagesHtml}</div>
         </div>
       </div>
